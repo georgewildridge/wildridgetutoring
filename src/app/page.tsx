@@ -7,6 +7,7 @@ const subjects = [
   "Physics",
   "Chemistry",
   "Test Prep (SAT/ACT/SSAT)",
+  "Prep School Admissions",
 ];
 
 export default function Home() {
@@ -57,9 +58,10 @@ export default function Home() {
         </h2>
         <div className="space-y-4 text-ink/80 leading-relaxed">
           <p>
-            I&apos;ve been tutoring privately for four years. I studied
-            Creative Writing at the University of Chicago, and I work across
-            English, math, sciences, and test prep.
+            I&apos;ve been tutoring privately for four years. I attended
+            Choate Rosemary Hall, entered the University of Chicago as an
+            applied math major, and graduated with a degree in Creative
+            Writing. I work across English, math, sciences, and test prep.
           </p>
           <p>
             In my experience, students rarely struggle because they can&apos;t
