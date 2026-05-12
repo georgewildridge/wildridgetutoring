@@ -133,15 +133,15 @@ export default function Home() {
         <h2 className="font-serif text-2xl md:text-3xl font-medium text-ink mb-6">
           Get in touch
         </h2>
-        <p className="text-ink/80 leading-relaxed mb-8">
-          Reach out to set up a first session or ask any questions.
-        </p>
-
         {submitted ? (
           <p className="text-sage text-sm">
             Thanks for reaching out. I&apos;ll get back to you soon.
           </p>
         ) : (
+          <>
+          <p className="text-ink/80 leading-relaxed mb-8">
+            Reach out to set up a first session or ask any questions.
+          </p>
           <form
             onSubmit={handleSubmit}
             className="space-y-4 max-w-md"
@@ -191,6 +191,7 @@ export default function Home() {
               Send
             </button>
           </form>
+          </>
         )}
 
         <div className="mt-8 space-y-2 text-sm text-muted">
