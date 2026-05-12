@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const subjects = [
   "Writing",
@@ -11,6 +14,22 @@ const subjects = [
 ];
 
 export default function Home() {
+  const [submitted, setSubmitted] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    await fetch("https://formsubmit.co/ajax/gwildridgeb@gmail.com", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    setSubmitted(true);
+  }
+
   return (
     <main className="min-h-screen">
       {/* ---- Hero ---- */}
@@ -117,56 +136,63 @@ export default function Home() {
         <p className="text-ink/80 leading-relaxed mb-8">
           Reach out to set up a first session or ask any questions.
         </p>
-        <form
-          action="https://formsubmit.co/gwildridgeb@gmail.com"
-          method="POST"
-          className="space-y-4 max-w-md"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="New tutoring inquiry from wildridgetutoring.com" />
-          <div>
-            <label htmlFor="name" className="block text-sm text-muted mb-1">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm text-muted mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm text-muted mb-1">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-sage text-cream px-6 py-2.5 rounded-sm text-sm hover:bg-sage/85 transition-colors"
+
+        {submitted ? (
+          <p className="text-sage text-sm">
+            Thanks for reaching out. I&apos;ll get back to you soon.
+          </p>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 max-w-md"
           >
-            Send
-          </button>
-        </form>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New tutoring inquiry from wildridgetutoring.com" />
+            <div>
+              <label htmlFor="name" className="block text-sm text-muted mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm text-muted mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm text-muted mb-1">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="w-full border border-border bg-warm-white rounded-sm px-3 py-2 text-ink text-sm outline-none focus:border-sage transition-colors resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-sage text-cream px-6 py-2.5 rounded-sm text-sm hover:bg-sage/85 transition-colors"
+            >
+              Send
+            </button>
+          </form>
+        )}
+
         <div className="mt-8 space-y-2 text-sm text-muted">
           <p>
             Or reach me directly at{" "}
