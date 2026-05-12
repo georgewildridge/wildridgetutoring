@@ -16,9 +16,17 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "George Wildridge | Private Tutoring in Brooklyn",
+  title: "Wildridge Tutoring | Private Tutoring in Brooklyn",
   description:
     "Private tutoring in Writing, English, Math, Science, and Test Prep for middle school, high school, and college students. University of Chicago graduate based in Brooklyn, NY.",
+  openGraph: {
+    title: "Wildridge Tutoring",
+    description:
+      "Private tutoring in Brooklyn for middle school, high school, and college students.",
+    url: "https://wildridgetutoring.com",
+    siteName: "Wildridge Tutoring",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
