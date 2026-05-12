@@ -18,7 +18,7 @@ export async function GET() {
       >
         <div
           style={{
-            fontSize: 64,
+            fontSize: 80,
             fontFamily: "serif",
             color: "#2c2c2c",
             fontWeight: 500,
@@ -28,7 +28,7 @@ export async function GET() {
         </div>
         <div
           style={{
-            fontSize: 24,
+            fontSize: 30,
             color: "#7a7570",
             marginTop: 16,
           }}
