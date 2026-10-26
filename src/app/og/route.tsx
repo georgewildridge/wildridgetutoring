@@ -33,7 +33,7 @@ export async function GET() {
             marginTop: 16,
           }}
         >
-          Private Tutoring in Brooklyn
+          Tutoring and College Admissions · New York
         </div>
       </div>
     ),

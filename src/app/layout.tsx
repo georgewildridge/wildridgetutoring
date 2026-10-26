@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Wildridge Tutoring",
   description:
-    "Private tutoring in Writing, English, Math, Science, and Test Prep for middle school, high school, and college students. University of Chicago graduate based in Brooklyn, NY.",
+    "Private tutoring and college admissions advising for middle school, high school, and college students. University of Chicago graduate based in New York.",
   openGraph: {
     title: "Wildridge Tutoring",
     description:
-      "Private tutoring in Brooklyn for middle school, high school, and college students.",
+      "Private tutoring and college admissions advising in New York.",
     url: "https://wildridgetutoring.com",
     siteName: "Wildridge Tutoring",
     type: "website",
