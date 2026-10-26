@@ -100,7 +100,7 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-xl text-muted leading-relaxed mb-6">
               Private tutor and college admissions advisor in New York, with
-              four years of experience working with students from middle
+              three years of experience working with students from middle
               school through college.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-sm text-muted">
